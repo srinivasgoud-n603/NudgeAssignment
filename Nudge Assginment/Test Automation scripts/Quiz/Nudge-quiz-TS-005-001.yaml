@@ -1,0 +1,196 @@
+# flow.yaml
+
+# Open  Nudge test apk
+appId: com.example.nudgetest_demoqa1
+---
+- launchApp
+
+- startRecording: Nudge-quiz-TS-005-001
+
+- extendedWaitUntil:
+    visible: "User Identifier"
+    timeout: 20000
+
+# login with user 
+- tapOn: "User Identifier"
+
+
+- extendedWaitUntil:
+    visible: "Track Quiz"
+    timeout: 20000
+
+#Clicking on track quiz button 
+- tapOn: "Track Quiz"
+
+- extendedWaitUntil:
+    visible: "Start Quiz"
+    timeout: 20000
+
+#Clicking on start quiz button 
+- tapOn: "START QUIZ"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) Paris"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) Oxygen"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) William Shakespeare"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+
+# --------------closing & reopen apk----------
+
+- tapOn:
+    id: "com.android.systemui:id/recent_apps"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+- "scroll"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+- tapOn: "nudgetest_demoqa1"
+
+
+- extendedWaitUntil:
+    visible: "Track Quiz"
+    timeout: 20000
+
+#------------Clicking on track quiz button------------------
+- tapOn: "Track Quiz"
+
+- extendedWaitUntil:
+    visible: "Start Quiz"
+    timeout: 20000
+
+#Clicking on start quiz button 
+- tapOn: "START QUIZ"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+- tapOn: "c) Paris"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) Oxygen"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) William Shakespeare"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) Jupiter"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) 1912"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) 2"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) Leonardo da Vinci"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) Avocado"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) Japan"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "a) 0"
+
+- extendedWaitUntil:
+    visible: "BACK TO HOME"
+    timeout: 20000
+
+#Clicking on start quiz button 
+- tapOn: "BACK TO HOME"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 5
+
+
+- stopRecording
+
+# close apk
+- stopApp
+
+
+
+
+
+
