@@ -1,0 +1,126 @@
+# flow.yaml
+
+# Open  Nudge test apk
+appId: com.example.nudgetest_demoqa1
+---
+- launchApp
+
+- startRecording: Nudge-quiz-TS-009-001
+
+- extendedWaitUntil:
+    visible: "User Identifier"
+    timeout: 20000
+
+# login with user 
+- tapOn: "User Identifier"
+
+
+- extendedWaitUntil:
+    visible: "Track Quiz"
+    timeout: 20000
+
+#Clicking on track quiz button 
+- tapOn: "Track Quiz"
+
+- extendedWaitUntil:
+    visible: "Start Quiz"
+    timeout: 20000
+
+#Clicking on start quiz button and answer all wrong answers
+- tapOn: "START QUIZ"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "a) Berlin"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "a) Gold"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "d) Jane Austen"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) Mars"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "c) 1918"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) 1"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "a) Vincent van Gogh"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "a) Tomato"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "a) China"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 2
+
+
+- tapOn: "b) 32"
+
+- extendedWaitUntil:
+    visible: "BACK TO HOME"
+    timeout: 20000
+
+#Clicking on start quiz button 
+- tapOn: "BACK TO HOME"
+
+- stopRecording
+
+# close apk
+- stopApp
+
+
+
+
