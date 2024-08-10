@@ -1,0 +1,28 @@
+# flow.yaml
+
+# Open  Nudge test apk
+appId: com.example.nudgetest_demoqa1
+---
+- launchApp
+
+- startRecording: TC-F-Nudge-Story-TS-009-002
+
+- extendedWaitUntil:
+    visible: "Track Quiz"
+    timeout: 20000
+
+#tapping on any button(except track story button) check whether any stories are loading or not.
+
+
+- tapOn: "Track Quiz"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 3
+
+
+- stopRecording
+
+# close apk
+- stopApp

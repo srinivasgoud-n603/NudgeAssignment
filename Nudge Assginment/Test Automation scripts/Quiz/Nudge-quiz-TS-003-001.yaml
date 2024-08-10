@@ -1,0 +1,27 @@
+# flow.yaml
+
+# Open  Nudge test apk
+appId: com.example.nudgetest_demoqa1
+---
+- launchApp
+
+- startRecording: Nudge-quiz-TS-003-001
+
+- extendedWaitUntil:
+    visible: "Track Quiz"
+    timeout: 20000
+
+# with out login trying to open quiz
+- tapOn: "Track Quiz"
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 5
+
+- stopRecording
+
+# close apk
+- stopApp
+
+

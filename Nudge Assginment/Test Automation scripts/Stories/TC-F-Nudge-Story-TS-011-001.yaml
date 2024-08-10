@@ -1,0 +1,36 @@
+# flow.yaml
+
+# Open  Nudge test apk
+appId: com.example.nudgetest_demoqa1
+---
+- launchApp
+
+- startRecording: TC-F-Nudge-Story-TS-011-001
+
+- extendedWaitUntil:
+    visible: "User Identifier"
+    timeout: 20000
+
+# login with user 
+- tapOn: "User Identifier"
+
+# closing & reopen apk
+
+- tapOn:
+    id: "com.android.systemui:id/white_cutout"
+
+- "scroll"
+
+- tapOn: "nudgetest_demoqa1"
+
+#wait & verify any stories are loaded or not
+
+- runScript:
+    file: wait.js
+    env:
+      seconds: 5
+
+- stopRecording
+
+# close apk
+- stopApp

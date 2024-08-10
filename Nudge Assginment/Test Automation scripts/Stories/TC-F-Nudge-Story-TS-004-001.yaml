@@ -1,0 +1,41 @@
+
+# flow.yaml
+
+
+
+# Open  Nudge test apk
+appId: com.example.nudgetest_demoqa1
+---
+- launchApp
+
+- startRecording: TC-F-Nudge-Story-TS-004-001
+
+- extendedWaitUntil:
+    visible: "User Identifier"
+    timeout: 20000 
+
+# login with user 
+- tapOn: "User Identifier"
+
+# Then Trigger a story
+
+- assertVisible: "Track Story"
+- tapOn: "Track Story"
+
+#Then APK  will prompt story/Stories in header of APK & tap on a story
+- extendedWaitUntil:
+    visible: "fgeff\nerfeferfr"
+    timeout: 10000 
+
+# Tapping on a user story
+- tapOn: "fgeff\nerfeferfr"
+   
+- runScript:
+    file: wait.js
+    env:
+      seconds: 110
+
+- stopRecording
+
+# close apk
+- stopApp
